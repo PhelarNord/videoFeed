@@ -36,7 +36,7 @@ io.on('connection', socket => {
         console.log(`${socketToRoom[socket.id]}: ${socket.id} enter`)
 
         const userInThisRoom = users[data.room].filter((user: { id: string; }) => user.id !== socket.id);
-        console.log(`User in room: ${userInThisRoom}`);
+        console.log(`Users in room: ${userInThisRoom.length}`);
 
         io.sockets.to(socket.id).emit('all_users', userInThisRoom);
     });
@@ -45,6 +45,10 @@ io.on('connection', socket => {
         console.log(`offer: ${socket.id}`);
         socket.broadcast.emit('getOffer', sdp)
     });
+    socket.on('answer', sdp => {
+        console.log(`Answer from: ${socket.id}`);
+        socket.broadcast.emit('getAnswer', sdp);
+    })
 
     socket.on('candidate', candidate => {
         console.log('candidate ' + socket.id);

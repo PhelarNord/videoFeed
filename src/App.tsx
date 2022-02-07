@@ -1,9 +1,6 @@
 
-import { stringify } from 'querystring';
 import React, {FC, useEffect, useRef} from 'react';
 import io from 'socket.io-client'
-
-
 
 import './App.css';
 
