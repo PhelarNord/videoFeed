@@ -4,7 +4,7 @@ import io from 'socket.io-client'
 
 import './App.css';
 
-const SOCKET_SERVER_URL = "http://localhost:8080"
+const SOCKET_SERVER_URL = "http://192.168.1.242:8080"
 
 const pc_config: RTCConfiguration = {
   iceServers: [
