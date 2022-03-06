@@ -19,7 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd server && node signaling.js\"",
+    "start": "react-scripts start",
+    "start-dev": "concurrently \"react-scripts start\" \"cd server && node signaling.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
